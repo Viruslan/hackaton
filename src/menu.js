@@ -2,6 +2,18 @@ import { Menu } from "./core/menu";
 import { BackgroundModule } from "./modules/background.module";
 import { ClicksModule } from "./modules/clicks.module";
 export class ContextMenu extends Menu {
+  constructor() {
+    super(".menu");
+    this.background = new BackgroundModule("BackgroundModule", "Поменять цвет");
+    this.clicks = new ClicksModule("ClicksModule", "Посчитать клики");
+    this.el.addEventListener("click", (e) => {
+      // this.background.trigger();
+      if (e.target.dataset.type === "BackgroundModule") {
+        this.background.trigger();
+        this.close();
+      }
+    });
+  }
   close() {
     this.el.className = "menu";
     this.el.innerHTML = "";
@@ -13,12 +25,13 @@ export class ContextMenu extends Menu {
     setTimeout(() => {
       this.el.classList.add("open");
     }, 100);
-    this.add(BackgroundModule, "BackgroundModule", "Поменять цвет");
-    this.add(ClicksModule, "ClicksModule", "Счетчик кликов");
+
+    this.add(this.background);
+    this.add(this.clicks);
+    // this.add(ClicksModule, "ClicksModule", "Счетчик кликов");
   }
 
-  add(moduleName, type, text) {
-    const module = new moduleName(type, text);
-    this.el.innerHTML += module.toHTML();
+  add(moduleName) {
+    this.el.innerHTML += moduleName.toHTML();
   }
 }
