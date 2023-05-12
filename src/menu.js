@@ -3,7 +3,12 @@ import { getRandomColor } from "./utils";
 export class ContextMenu extends Menu {
 
     open(){
-        
-        document.body.style.backgroundColor = getRandomColor();
+        this.el.className = 'menu open';
     }
+    close(){
+        this.el.className = 'menu';
+    }
+    /* add(){
+
+    } */
 }
