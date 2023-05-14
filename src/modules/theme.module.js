@@ -3,6 +3,7 @@ import { Module } from '../core/module';
 export class ThemeModule extends Module {
   
   #menu;
+  
   #isDarkTheme;
 
   constructor(type, text) {

@@ -15,19 +15,44 @@ body {
 }
 
 .menu {
-   position: fixed;
-    z-index: 1000;
-    width: 150px;
-    background: #1b1a1a;
-    border-radius: 5px;
-    display: none;
-    list-style: none;
-    color: #eee;
+  position: fixed;
+  z-index: 1000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+  display: none;
+  list-style: none;
+  color: #eee;
 }
 
 .menu.open {
   display: block;
+}
 
+.menu-item {
+  position: relative;
+  padding: 8px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+  border-radius: inherit;
+}
+
+.menu .menu-item:hover {
+  background: #0088ff;
+  color: #eee;
+}
+.submenu {
+  position: absolute;
+  z-index: 1000;
+  top:0px;
+  left: 140px;;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+  display: block;
+  list-style: none;
+  color: #eee;
 }
 
 .phrase-module {
@@ -47,10 +72,6 @@ body {
 .phrase-module:hover {
   transform: scale(110%);
 }
-
-
-}
-
 
 .start {
   color: #eee;
@@ -118,7 +139,6 @@ body {
   transform: scale(110%);
 }
 
-
 .shape {
   display: flex;
   position: relative;
@@ -139,47 +159,19 @@ body {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-
-
-.menu-item {
-    padding: 8px 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color .2s ease-in;
-    border-radius: inherit;
 }
 
-.menu .menu-item:hover {
-    background: #0088ff;
-    color: #eee;
-}
-.menu-item:hover {
-    background: #343434;
-}
-
- .submenu {
-    position: fixed;
-    z-index: 1000;
-    width: 150px;
-    background: #1b1a1a;
-    border-radius: 5px;
-    display: block;
-    list-style: none;
+.selectTime {
+  height: 48px;
+  width: 280px;
+  border: 1px solid #c0c0c0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 16px;
+  margin: 34px 10px;
 }
 
-
-.selectTime{
-    height: 48px;
-    width: 280px;
-    border: 1px solid #c0c0c0;
-    border-radius: 4px;
-    box-sizing: border-box;
-    padding: 16px;
-    margin: 34px 10px;
-}
-
-
-.selectTimeButton{
+.selectTimeButton {
   border-radius: 5px;
   text-align: center;
   background: #1b1a1a;
@@ -188,7 +180,7 @@ body {
   margin: 34px 20px;
 }
 
-.spanResult{
+.spanResult {
   display: flex;
   justify-content: center;
   font-size: 30px;
@@ -197,7 +189,7 @@ body {
   margin: auto 0;
 }
 
-.counterDiv{
+.counterDiv {
   display: flex;
   justify-content: center;
   font-size: 30px;
@@ -217,13 +209,11 @@ body {
   background-color: #474e5d;
   padding-top: 50px;
 }
+
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto 15% auto;
   border: 1px solid #888;
   width: 400px;
   height: 120px;
-
 }
-
-
