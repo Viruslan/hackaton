@@ -45,6 +45,7 @@ body {
 
 .phrase-module:hover {
   transform: scale(110%);
+}
 
 .menu-item {
     padding: 8px 10px;
