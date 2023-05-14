@@ -23,6 +23,7 @@ export class ContextMenu extends Menu {
       "Генератор фраз"
     );
     this.theme = new ThemeModule("theme", "Сменить тему");
+    this.position = 0;
     this.developers = new DevelopersModule("developers", "Разработчики");
 
     this.el.addEventListener("click", (e) => {
@@ -36,7 +37,7 @@ export class ContextMenu extends Menu {
     });
     this.el.addEventListener("mouseover", (e) => {
       if (e.target.dataset.type === "developers") {
-        this.developers.trigger(e.target);
+        this.developers.trigger(e.target, this.position);
       }
     });
   }
@@ -46,11 +47,30 @@ export class ContextMenu extends Menu {
   }
   open(e) {
     this.close();
-    this.el.style.top = `${e.clientY}px`;
-    this.el.style.left = `${e.clientX}px`;
+    let pointerW = e.clientX;
+    let pointerH = e.clientY;
+    let windH = window.innerHeight;
+    let windW = window.innerWidth;
+    if (windW - pointerW < 150 && windH - pointerH < 353) {
+      this.el.style.top = `${e.clientY - 353}px`;
+      this.el.style.left = `${e.clientX - 150}px`;
+      this.position = 3;
+    } else if (windW - pointerW < 150) {
+      this.el.style.top = `${e.clientY}px`;
+      this.el.style.left = `${e.clientX - 150}px`;
+      this.position = 2;
+    } else if (windH - pointerH < 353) {
+      this.el.style.top = `${e.clientY - 353}px`;
+      this.el.style.left = `${e.clientX}px`;
+      this.position = 1;
+    } else {
+      this.el.style.top = `${e.clientY}px`;
+      this.el.style.left = `${e.clientX}px`;
+      this.position = 0;
+    }
     setTimeout(() => {
       this.el.classList.add("open");
-    }, 100);
+    }, 150);
 
     this.add(this.background);
     this.add(this.clicks);

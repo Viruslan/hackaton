@@ -45,8 +45,6 @@ body {
 .submenu {
   position: absolute;
   z-index: 1000;
-  top:0px;
-  left: 140px;;
   width: 150px;
   background: #1b1a1a;
   border-radius: 5px;
