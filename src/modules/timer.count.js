@@ -77,6 +77,8 @@ export class TimerCount extends Module {
             isCompletedMessage.remove();
             timer.remove();
             text.value = "";
+            button.remove();
+            text.remove();
           }
         }, textNumber * 1000 + 2000);
       } else if (textNumber === 0 || textNumber < 0) {

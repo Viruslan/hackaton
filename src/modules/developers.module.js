@@ -13,7 +13,6 @@ export class DevelopersModule extends Module {
     e.append(this.menuList);
     const submenu = new SubMenu();
     submenu.open();
-    console.log(position);
     if (position === 0) {
       this.menuList.style.top = "0";
       this.menuList.style.left = "140px";
