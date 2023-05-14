@@ -1,4 +1,4 @@
-import {Module} from '../core/module'
+import { Module } from "../core/module";
 
 export class ClicksModule extends Module {
     constructor(type, text){
@@ -55,3 +55,4 @@ export class ClicksModule extends Module {
         },countTime*1000)
     }
 }
+

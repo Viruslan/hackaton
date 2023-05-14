@@ -27,6 +27,7 @@ body {
 
 .menu.open {
   display: block;
+
 }
 
 .phrase-module {
@@ -46,6 +47,99 @@ body {
 .phrase-module:hover {
   transform: scale(110%);
 }
+
+
+}
+
+
+.start {
+  color: #eee;
+  background-color: rgb(56, 56, 57);
+  font-size: 20px;
+  border-radius: 10%;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+}
+
+.start:hover {
+  opacity: 0.7;
+}
+
+.timer-block {
+  border-radius: 10px;
+  color: rgb(229, 236, 236);
+  background: #583838;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+}
+
+.input-text {
+  width: 70px;
+  height: 45px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid darkblue;
+}
+
+.completed-message {
+  border-radius: 10px;
+  color: rgb(229, 236, 236);
+  background: #583838;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+}
+
+.phrase-module {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 10px;
+  right: 25px;
+  bottom: 25px;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  box-shadow: -3px -2px 8px 3px black;
+  transition: transform 0.5s;
+  text-align: center;
+}
+
+.phrase-module:hover {
+  transform: scale(110%);
+}
+
+
+.shape {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  transition: transform 1s;
+  box-shadow: -3px -1px 30px 0px black;
+  text-align: center;
+}
+
+.shape:hover {
+  transform: scale(110%);
+  transition: transform cubic-bezier(0.12, 1.04, 0.9, 0.51) 0.5s;
+}
+
+.shape p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
 
 .menu-item {
     padding: 8px 10px;
@@ -72,6 +166,7 @@ body {
     display: block;
     list-style: none;
 }
+
 
 .selectTime{
     height: 48px;
@@ -130,3 +225,5 @@ body {
   height: 120px;
 
 }
+
+
