@@ -23,10 +23,61 @@ body {
     display: none;
     list-style: none;
     color: #eee;
+
 }
 
 .menu.open {
   display: block;
+
+}
+
+
+.start {
+  color: #eee;
+  background-color: rgb(56, 56, 57);
+  font-size: 20px;
+  border-radius: 10%;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+}
+
+.start:hover {
+  opacity: 0.7;
+}
+
+.timer-block {
+  border-radius: 10px;
+  color: rgb(229, 236, 236);
+  background: #583838;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+}
+
+.input-text {
+  width: 70px;
+  height: 45px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid darkblue;
+}
+
+.completed-message {
+  border-radius: 10px;
+  color: rgb(229, 236, 236);
+  background: #583838;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
 }
 
 .phrase-module {
@@ -93,5 +144,4 @@ body {
     border-radius: 5px;
     display: block;
     list-style: none;
-
 }
