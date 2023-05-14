@@ -14,7 +14,7 @@ export class ThemeModule extends Module {
   trigger() {
     this.#isDarkTheme = !this.#isDarkTheme;
     if (!this.#isDarkTheme) {
-      this.#menu.style.background = 'initial';
+      this.#menu.style.background = '#f7f7f7';
       this.#menu.style.border = '1px solid #9d9d9d';
       this.#menu.style.color = '#525252';
     } else {
