@@ -22,6 +22,7 @@ body {
     border-radius: 5px;
     display: none;
     list-style: none;
+    color: #eee;
 }
 
 .menu.open {
@@ -31,12 +32,12 @@ body {
 .menu .menu-item {
     padding: 8px 10px;
     font-size: 1rem;
-    color: #eee;
     cursor: pointer;
     transition: background-color .2s ease-in;
     border-radius: inherit;
 }
 
 .menu .menu-item:hover {
-    background: #343434;
+    background: #0088ff;
+    color: #eee;
 }

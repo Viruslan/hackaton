@@ -2,12 +2,14 @@ import { Menu } from "./core/menu";
 import { BackgroundModule } from "./modules/background.module";
 import { ClicksModule } from "./modules/clicks.module";
 import { ExitModule } from "./modules/exit.module";
+import { ThemeModule } from "./modules/theme.module";
 export class ContextMenu extends Menu {
   constructor() {
     super(".menu");
     this.background = new BackgroundModule("background", "Поменять цвет");
     this.clicks = new ClicksModule("clicks", "Посчитать клики");
     this.exit = new ExitModule("exit", "Poof!");
+    this.theme = new ThemeModule("theme", "Сменить тему");
     this.el.addEventListener("click", (e) => {
       this[e.target.dataset.type].trigger();
       this.close();
@@ -28,6 +30,7 @@ export class ContextMenu extends Menu {
     this.add(this.background);
     this.add(this.clicks);
     this.add(this.exit);
+    this.add(this.theme);
   }
 
   add(moduleName) {
