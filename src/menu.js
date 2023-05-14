@@ -17,7 +17,6 @@ export class ContextMenu extends Menu {
     this.exit = new ExitModule("exit", "Выход!");
     this.timer = new TimerCount("timer", "Обратный отсчет");
     this.sound = new SoundModule("sound", "Воспроизвести звук");
-
     this.randomShape = new RandomShape("randomShape", "Нарисовать фигуру");
     this.randomPhrase = new RandomPhraseModule(
       "randomPhrase",
@@ -27,14 +26,18 @@ export class ContextMenu extends Menu {
     this.developers = new DevelopersModule("developers", "Разработчики");
 
     this.el.addEventListener("click", (e) => {
-      if (e.target.dataset.type !== "developers") {
+      if (
+        e.target.dataset.type !== "developers" &&
+        e.target.classList[1] !== "developer"
+      ) {
         this[e.target.dataset.type].trigger();
         this.close();
       }
     });
     this.el.addEventListener("mouseover", (e) => {
-      if (e.target.dataset.type === "developers")
+      if (e.target.dataset.type === "developers") {
         this.developers.trigger(e.target);
+      }
     });
   }
   close() {
@@ -48,7 +51,7 @@ export class ContextMenu extends Menu {
     setTimeout(() => {
       this.el.classList.add("open");
     }, 100);
-   
+
     this.add(this.background);
     this.add(this.clicks);
     this.add(this.randomPhrase);
