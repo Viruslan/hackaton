@@ -177,7 +177,8 @@ body {
   background: #1b1a1a;
   color: #eee;
   height: 47px;
-  margin: 34px 20px;
+  margin: 24px 5px;
+  padding: 5px 15px;
 }
 
 .spanResult {
