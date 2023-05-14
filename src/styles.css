@@ -40,3 +40,7 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+.countd{
+    text-align: center;
+    font-size: 20px;
+}
