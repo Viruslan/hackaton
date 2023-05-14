@@ -15,3 +15,7 @@ export function getRandomColor() {
 export function getRandomIndex(max) {
   return Math.floor(Math.random() * max);
 }
+
+export function getRandomNumber(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
