@@ -15,31 +15,22 @@ body {
 }
 
 .menu {
-  position: fixed;
-  z-index: 1000;
-  width: 150px;
-  background: #1b1a1a;
-  border-radius: 5px;
-  display: none;
-  list-style: none;
+   position: fixed;
+    z-index: 1000;
+    width: 150px;
+    background: #1b1a1a;
+    border-radius: 5px;
+    display: none;
+    list-style: none;
+    color: #eee;
+
 }
 
 .menu.open {
   display: block;
+
 }
 
-.menu .menu-item {
-  padding: 8px 10px;
-  font-size: 1rem;
-  color: #eee;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in;
-  border-radius: inherit;
-}
-
-.menu .menu-item:hover {
-  background: #343434;
-}
 
 .start {
   color: #eee;
@@ -87,4 +78,70 @@ body {
   position: absolute;
   top: 100px;
   left: 50%;
+}
+
+.phrase-module {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 10px;
+  right: 25px;
+  bottom: 25px;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  box-shadow: -3px -2px 8px 3px black;
+  transition: transform 0.5s;
+  text-align: center;
+}
+
+.phrase-module:hover {
+  transform: scale(110%);
+}
+
+
+.shape {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  transition: transform 1s;
+  box-shadow: -3px -1px 30px 0px black;
+  text-align: center;
+}
+
+.shape:hover {
+  transform: scale(110%);
+  transition: transform cubic-bezier(0.12, 1.04, 0.9, 0.51) 0.5s;
+}
+
+.shape p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+.menu-item {
+    padding: 8px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color .2s ease-in;
+    border-radius: inherit;
+}
+
+.menu .menu-item:hover {
+    background: #0088ff;
+    color: #eee;
+}
+.menu-item:hover {
+    background: #343434;
+}
+
+ .submenu {
+    position: fixed;
+    z-index: 1000;
+    width: 150px;
+    background: #1b1a1a;
+    border-radius: 5px;
+    display: block;
+    list-style: none;
 }
