@@ -23,11 +23,31 @@ body {
     display: none;
     list-style: none;
     color: #eee;
-
 }
 
 .menu.open {
   display: block;
+
+}
+
+.phrase-module {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 10px;
+  right: 25px;
+  bottom: 25px;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  box-shadow: -3px -2px 8px 3px black;
+  transition: transform 0.5s;
+  text-align: center;
+}
+
+.phrase-module:hover {
+  transform: scale(110%);
+}
+
 
 }
 
@@ -120,6 +140,7 @@ body {
   margin-right: -50%;
   transform: translate(-50%, -50%);
 
+
 .menu-item {
     padding: 8px 10px;
     font-size: 1rem;
@@ -145,3 +166,64 @@ body {
     display: block;
     list-style: none;
 }
+
+
+.selectTime{
+    height: 48px;
+    width: 280px;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 16px;
+    margin: 34px 10px;
+}
+
+
+.selectTimeButton{
+  border-radius: 5px;
+  text-align: center;
+  background: #1b1a1a;
+  color: #eee;
+  height: 47px;
+  margin: 34px 20px;
+}
+
+.spanResult{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: auto 0;
+}
+
+.counterDiv{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: auto 0;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 400px;
+  height: 120px;
+
+}
+
+
