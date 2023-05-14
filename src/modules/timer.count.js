@@ -1,6 +1,8 @@
-// import { Module } from "../core/module";
-export class TimerCount {
-  constructor() {
+import { Module } from "../core/module";
+
+export class TimerCount extends Module {
+  constructor(type, text) {
+    super(type, text);
     this.inputBlock = document.createElement("div");
     this.inputBlock.className = "block-input";
     this.inputText = document.createElement("input");
@@ -34,52 +36,53 @@ export class TimerCount {
     document.body.append(completedMessage);
     return completedMessage;
   }
-}
 
-const timerCount = new TimerCount();
-timerCount.startInputBlock();
+  trigger() {
+    this.startInputBlock();
 
-const button = document.querySelector(".start");
-const text = document.querySelector(".input-text");
+    const button = document.querySelector(".start");
+    const text = document.querySelector(".input-text");
 
-let interval;
-let timer;
-let timout;
+    let interval;
+    let timer;
+    let timout;
 
-button.addEventListener("click", () => {
-  console.log(text.value);
-  let textNumber = text.value;
-  textNumber = Number(textNumber);
-  if (!!timer) {
-    timer.remove();
-  }
-
-  if (textNumber !== 0 && textNumber > 0) {
-    timerCount.createTimerBlock();
-    timer = document.querySelector(".timer-block");
-    timer.innerHTML = textNumber;
-    clearInterval(interval);
-    interval = setInterval(function startTimer() {
-      if (timer.innerHTML > 0) {
-        timer.innerHTML--;
-      }
-    }, 1000);
-
-    clearTimeout(timout);
-    timout = setTimeout(() => {
-      timerCount.createCompletionMessage();
-    }, textNumber * 1000);
-
-    setTimeout(() => {
-      const isCompletedMessage = document.querySelector(".completed-message");
-      if (isCompletedMessage) {
-        isCompletedMessage.remove();
+    button.addEventListener("click", () => {
+      let textNumber = text.value;
+      textNumber = Number(textNumber);
+      if (!!timer) {
         timer.remove();
-        text.value = "";
       }
-    }, textNumber * 1000 + 2000);
-  } else if (textNumber === 0 || textNumber < 0) {
-    text.value = "";
-    alert("НЕКОРРЕКТНЫЙ ВВОД");
+
+      if (textNumber !== 0 && textNumber > 0) {
+        this.createTimerBlock();
+        timer = document.querySelector(".timer-block");
+        timer.innerHTML = textNumber;
+        clearInterval(interval);
+        interval = setInterval(function startTimer() {
+          if (timer.innerHTML > 0) {
+            timer.innerHTML--;
+          }
+        }, 1000);
+
+        clearTimeout(timout);
+        timout = setTimeout(() => {
+          this.createCompletionMessage();
+        }, textNumber * 1000);
+
+        setTimeout(() => {
+          const isCompletedMessage =
+            document.querySelector(".completed-message");
+          if (isCompletedMessage) {
+            isCompletedMessage.remove();
+            timer.remove();
+            text.value = "";
+          }
+        }, textNumber * 1000 + 2000);
+      } else if (textNumber === 0 || textNumber < 0) {
+        text.value = "";
+        alert("НЕКОРРЕКТНЫЙ ВВОД");
+      }
+    });
   }
-});
+}
