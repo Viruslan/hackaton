@@ -3,6 +3,7 @@ import { BackgroundModule } from "./modules/background.module";
 import { ClicksModule } from "./modules/clicks.module";
 import { ExitModule } from "./modules/exit.module";
 import { RandomPhraseModule } from "./modules/random.phrase.module";
+import { RandomShape } from "./modules/random.shape.module";
 
 export class ContextMenu extends Menu {
   constructor() {
@@ -14,6 +15,7 @@ export class ContextMenu extends Menu {
       "randomPhrase",
       "Генератор фраз"
     );
+    this.randomShape = new RandomShape("randomShape", "Нарисовать фигуру");
     this.el.addEventListener("click", (e) => {
       this[e.target.dataset.type].trigger();
       this.close();
@@ -35,6 +37,7 @@ export class ContextMenu extends Menu {
     this.add(this.clicks);
     this.add(this.randomPhrase);
     this.add(this.exit);
+    this.add(this.randomShape);
   }
 
   add(moduleName) {
