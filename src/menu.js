@@ -7,7 +7,7 @@ export class ContextMenu extends Menu {
     super(".menu");
     this.background = new BackgroundModule("background", "Поменять цвет");
     this.clicks = new ClicksModule("clicks", "Посчитать клики");
-    this.exit = new ExitModule("exit", "Poof!");
+    this.exit = new ExitModule("exit", "Выход!");
     this.el.addEventListener("click", (e) => {
       this[e.target.dataset.type].trigger();
       this.close();
