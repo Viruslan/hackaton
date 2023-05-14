@@ -29,7 +29,7 @@ body {
     display: block;
 }
 
-.menu .menu-item {
+.menu-item {
     padding: 8px 10px;
     font-size: 1rem;
     cursor: pointer;
@@ -40,4 +40,17 @@ body {
 .menu .menu-item:hover {
     background: #0088ff;
     color: #eee;
+  
+.menu-item:hover {
+    background: #343434;
+}
+
+ .submenu {
+    position: fixed;
+    z-index: 1000;
+    width: 150px;
+    background: #1b1a1a;
+    border-radius: 5px;
+    display: block;
+    list-style: none;
 }
